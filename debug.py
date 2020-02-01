@@ -3,7 +3,8 @@ import os
 
 
 def debug_func(func):
-
+    """example debug decorator for function
+    """
     func_name = func.__qualname__
 
     @wraps(func)    # wrap pull metadata from the original function such as docstring
@@ -14,3 +15,12 @@ def debug_func(func):
 
         return func(*args, **kwargs)  # execute the original function
     return wrapper  # return the wrapped function
+
+
+def debug_instance_methods(cls):
+    """decorate all instance methods (not class and static methods) with debug_func
+    """
+    for key, val in vars(cls).items():
+        if callable(val):
+            setattr(cls, key, debug_func(val))
+    return cls
