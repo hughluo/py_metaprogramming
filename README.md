@@ -12,6 +12,7 @@ Inspired by David Beazley'S tutorial [Python 3 Metaprogramming](http://dabeaz.co
 ## Use Case
 
 ### Debug
+[Link](https://github.com/hughluo/py_metaprogramming/tree/master/debug)
 
 #### Problem
 While debugging, `print` or `logging` function everywhere.
@@ -20,6 +21,8 @@ While debugging, `print` or `logging` function everywhere.
 Use decorator to debug func and class decorator to debug all instance method.
 
 ### Signature
+[Link](https://github.com/hughluo/py_metaprogramming/tree/master/signature)
+
 
 #### Problem
 Boilerplate code to assign attribute while init a class.
