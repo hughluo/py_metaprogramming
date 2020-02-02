@@ -1,6 +1,12 @@
 from signature import Structure, add_signature
 
 
+class SpamTheOldWay:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+
 @add_signature("name", "price")
 class Spam(Structure):
     pass
