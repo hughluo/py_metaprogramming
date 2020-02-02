@@ -4,10 +4,10 @@ Inspired by David Beazley'S tutorial [Python 3 Metaprogramming](http://dabeaz.co
 ) presented at PyCon'13, March 14, 2013. Santa Clara, California. 
 
 ## Considerations
-(Class) Decorator vs Metaclass:
-How much functionality will the Metaclass have?
-Relocate special needs from metaclass to decorator
-
+### (Class) Decorator vs Metaclass:
+* How many functionalities will the Metaclass have?
+* Propagation due to inheritance
+* decorator to fulfill specialized needs 
 
 ## Use Case
 
