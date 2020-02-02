@@ -1,5 +1,5 @@
 import os
-from debug import debug_func, debug_instance_methods
+from debug import debug_func, debug_instance_methods, DebugMeta
 
 
 @debug_func
@@ -22,9 +22,16 @@ class Spam:
     def static_method():
         pass
 
+class Base(metaclass=DebugMeta):
+    ...
+
+class SpamWithMeta(Base):
+    def instance_method(self):
+        pass
 
 if __name__ == "__main__":
     spam()
     Spam().instance_method()
     Spam().class_method()
     Spam().static_method()
+    SpamWithMeta().instance_method()

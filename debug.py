@@ -11,7 +11,7 @@ def debug_func(func):
     def wrapper(*args, **kwargs):
         # do something additional here
         # i.e: print full qualified name of the original function
-        print("i am debugging " + func_name)
+        print("I am debugging " + func_name)
 
         return func(*args, **kwargs)  # execute the original function
     return wrapper  # return the wrapped function
@@ -24,3 +24,12 @@ def debug_instance_methods(cls):
         if callable(val):
             setattr(cls, key, debug_func(val))
     return cls
+
+
+class DebugMeta(type):
+    """metaclass, all its subclass will apply debug_instance_method
+    """
+    def __new__(cls, clsname, bases, clsdict):
+        clsobj = super().__new__(cls, clsname, bases, clsdict)
+        clsobj = debug_instance_methods(clsobj)
+        return clsobj
