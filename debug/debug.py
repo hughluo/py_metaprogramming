@@ -27,7 +27,7 @@ def debug_instance_methods(cls):
 
 
 class DebugMeta(type):
-    """metaclass, all its subclass will apply debug_instance_method
+    """metaclass, debug_instance_method will be applied to all its subclass
     """
     def __new__(cls, clsname, bases, clsdict):
         clsobj = super().__new__(cls, clsname, bases, clsdict)
